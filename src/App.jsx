@@ -6,7 +6,7 @@ const products = [
   { id: 1, name: 'Wireless Headphones', price: 199.99, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80' },
   { id: 2, name: 'Smart Watch', price: 299.50, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80' },
   { id: 3, name: 'Mechanical Keyboard', price: 149.00, image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80' },
-  { id: 4, name: 'Gaming Mouse', price: 79.99, image: 'https://images.unsplash.com/photo-1527814050087-379381547969?w=500&q=80' },
+  { id: 4, name: 'Gaming Mouse', price: 79.99, image: 'https://images.unsplash.com/photo-1629429408209-1f912961dbd8?w=500&q=80' },
 ];
 
 export default function App() {
