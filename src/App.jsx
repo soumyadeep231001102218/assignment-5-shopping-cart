@@ -3,10 +3,10 @@ import { useCart } from './context/CartContext';
 import './App.css';
 
 const products = [
-  { id: 1, name: 'Wireless Headphones', price: 199.99, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80' },
-  { id: 2, name: 'Smart Watch', price: 299.50, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80' },
-  { id: 3, name: 'Mechanical Keyboard', price: 149.00, image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80' },
-  { id: 4, name: 'Gaming Mouse', price: 79.99, image: 'https://images.unsplash.com/photo-1629429408209-1f912961dbd8?w=500&q=80' },
+  { id: 1, name: 'Wireless Headphones', price: 2999, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80' },
+  { id: 2, name: 'Smart Watch', price: 4499, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80' },
+  { id: 3, name: 'Mechanical Keyboard', price: 3499, image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80' },
+  { id: 4, name: 'Gaming Mouse', price: 1999, image: 'https://images.unsplash.com/photo-1629429408209-1f912961dbd8?w=500&q=80' },
 ];
 
 export default function App() {
@@ -64,7 +64,7 @@ export default function App() {
                 <img src={product.image} alt={product.name} />
                 <div className="product-info">
                   <h3>{product.name}</h3>
-                  <p className="price">${product.price.toFixed(2)}</p>
+                  <p className="price">₹{product.price.toLocaleString('en-IN')}</p>
                   <button 
                     className="btn-add"
                     onClick={() => dispatch({ type: 'ADD_TO_CART', payload: product })}
@@ -90,7 +90,7 @@ export default function App() {
                   <div key={item.id} className="cart-item">
                     <div className="item-details">
                       <h4>{item.name}</h4>
-                      <p>${item.price.toFixed(2)}</p>
+                      <p>₹{item.price.toLocaleString('en-IN')}</p>
                     </div>
                     
                     <div className="item-controls">
@@ -120,24 +120,24 @@ export default function App() {
                 
                 <div className="summary-row">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>₹{subtotal.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
                 </div>
 
                 {state.couponApplied && (
                   <div className="summary-row discount">
                     <span>Discount ({state.discountPercentage}%)</span>
-                    <span>-${discountAmount.toFixed(2)}</span>
+                    <span>-₹{discountAmount.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
                   </div>
                 )}
 
                 <div className="summary-row">
                   <span>GST (18%)</span>
-                  <span>${gst.toFixed(2)}</span>
+                  <span>₹{gst.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
                 </div>
                 
                 <div className="summary-row total">
                   <span>Grand Total</span>
-                  <span>${grandTotal.toFixed(2)}</span>
+                  <span>₹{grandTotal.toLocaleString('en-IN', { maximumFractionDigits: 2 })}</span>
                 </div>
 
                 {/* Coupon Code Form */}
